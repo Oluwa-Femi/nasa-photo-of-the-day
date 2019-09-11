@@ -1,4 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Header from './components/Header/header';
+import Image from './components/Image/image';
+import Date from './components/Date/date';
+import axios from 'axios';
+
 import "./App.css";
 
 function App() {
