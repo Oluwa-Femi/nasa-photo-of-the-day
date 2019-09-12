@@ -4,6 +4,7 @@ import TitleComponent from "./components/Title/title";
 import DateComp from "./components/Date/DateComp";
 import InfoComp from "./components/Info/info";
 import ImageComp from "./components/Image/ImageComp";
+import Footer from "./components/Footer/footer";
 import styled from 'styled-components';
 
 import "./App.css";
@@ -44,18 +45,18 @@ const StyledMain = styled.div`
   p {
     /* margin-right: 20px; */
     color: black;
+    font-weight: bold;
   }
 `
 const StyledTop = styled.div`
 display: flex;
-flex-direction: row;
-justify-content: space-between;
+justify-content: space-evenly;
 background: maroon;
 border-radius: 10px;
 `
 const StyledHorizontal = styled.div`
   display: flex;
-flex-direction: row;
+/* flex-direction: row; */
 `
 const StyledImage = styled.div`
   width: 80%;
@@ -86,12 +87,18 @@ const StyledInfo = styled.div`
     color: blue;
   }
 `
-
+const StyledFooter = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: center;
+background: maroon;
+border-radius: 10px;
+`
 
 
 
   React.useEffect(myData, []);
-  const { title, url, explanation, date } = state;
+  const { title, url, explanation, date, footer } = state;
 
   return (
     <NasaApp>
@@ -108,6 +115,9 @@ const StyledInfo = styled.div`
           <ImageComp url={url} />
         </StyledImage>
         </StyledHorizontal>
+        <StyledFooter>
+          <Footer  />
+        </StyledFooter>
       </StyledMain>
       </NasaApp>
   );
