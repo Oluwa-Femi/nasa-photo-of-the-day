@@ -4,6 +4,7 @@ import TitleComponent from "./components/Title/title";
 import DateComp from "./components/Date/DateComp";
 import InfoComp from "./components/Info/info";
 import ImageComp from "./components/Image/ImageComp";
+import styled from 'styled-components';
 
 import "./App.css";
 
@@ -19,42 +20,55 @@ function App() {
         setState(res.data);
       })
       .catch(error => {
-        return "Something went wrong";
+        return "Errrrr bleh!!";
       });
   };
 
-  const WholeApp = styled.div`
+const NasaApp = styled.div`
   margin: 0;
-  padding: 0;
-  width: 100vw;
+  max-width: 80vw;
+  padding-left: 10vw;
 `
-const StyledTitle = styled.div`
+const StyledMain = styled.div`
   width: 100%;
-  background: peru;
-  min-height: 80px;
+  background: white;
   margin: 0;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 5px 10px;
   h1 {
-    color: #f2f2f2;
+    color: black;
   }
   p {
     margin-right: 20px;
+    color: black;
   }
+`
+const StyledTop = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+background: maroon;
+border-radius: 2px solid black;
+`
+const StyledHorizontal = styled.div`
+  display: flex;
+flex-direction: row;
 `
 const StyledImage = styled.div`
   width: 80%;
   margin: auto;
   height: 400px;
-  background: peru;
+  padding: 5px 10px;
   img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 60vh;   
+    border: 2px solid blue;
   }
 `
 
-const StyledDescription = styled.div`
+const StyledInfo = styled.div`
   width: 80%;
   margin: auto;
   height: auto;
@@ -65,17 +79,10 @@ const StyledDescription = styled.div`
   }
   p {
     text-align: center;
-    font-size: 20px;
-    line-height: 1.5;
-    color: #333
+    font-size: 1rem;
+    line-height: 1.2;
+    color: blue;
   }
-`
-const StyledFooter = styled.header`
-  width: 100%;
-  background: peru;
-  min-height: 60px; 
-  margin: 0;
-  padding: 10px 30px;
 `
 
 
@@ -85,12 +92,22 @@ const StyledFooter = styled.header`
   const { title, url, explanation, date } = state;
 
   return (
-    <div className="App">
-      <TitleComponent title={title} />
-      <DateComp date={date} />
-      <InfoComp info={explanation} />
-        <ImageComp url={url} />
-    </div>
+    <NasaApp>
+      <StyledMain>
+        <StyledTop>
+          <TitleComponent title={title} />
+          <DateComp date={date} />
+        </StyledTop>
+        <StyledHorizontal>
+        <StyledInfo>
+          <InfoComp info={explanation} />
+        </StyledInfo>
+        <StyledImage>
+          <ImageComp url={url} />
+        </StyledImage>
+        </StyledHorizontal>
+      </StyledMain>
+      </NasaApp>
   );
 }
 
