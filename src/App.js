@@ -32,6 +32,7 @@ const NasaApp = styled.div`
 const StyledMain = styled.div`
   width: 100%;
   background: white;
+  min-height: 80px;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -41,7 +42,7 @@ const StyledMain = styled.div`
     color: black;
   }
   p {
-    margin-right: 20px;
+    /* margin-right: 20px; */
     color: black;
   }
 `
@@ -50,7 +51,7 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 background: maroon;
-border-radius: 2px solid black;
+border-radius: 10px;
 `
 const StyledHorizontal = styled.div`
   display: flex;
@@ -65,6 +66,7 @@ const StyledImage = styled.div`
     width: 90%;
     height: 60vh;   
     border: 2px solid blue;
+    border-radius: 10px;
   }
 `
 
@@ -72,7 +74,7 @@ const StyledInfo = styled.div`
   width: 80%;
   margin: auto;
   height: auto;
-  padding: 10px 30px;
+  padding: 5px 20px;
   h2 {
     text-align: center;
     color: #636363;
@@ -80,7 +82,7 @@ const StyledInfo = styled.div`
   p {
     text-align: center;
     font-size: 1rem;
-    line-height: 1.2;
+    line-height: 1.7;
     color: blue;
   }
 `
